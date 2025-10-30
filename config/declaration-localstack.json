@@ -1,0 +1,85 @@
+{
+  "name": "pipeline",
+  "roleArn": "arn:aws:iam::000000000000:role/role",
+  "artifactStore": {
+    "type": "S3",
+    "location": "artifact-store-bucket"
+  },
+  "stages": [
+    {
+      "name": "Source",
+      "actions": [
+        {
+          "name": "S3_Source",
+          "actionTypeId": {
+            "category": "Source",
+            "owner": "AWS",
+            "provider": "S3",
+            "version": "1"
+          },
+          "runOrder": 1,
+                    "configuration": {
+            "S3Bucket": "ewebsite",
+            "S3ObjectKey": "eWebsite.zip",
+            "PollForSourceChanges": "false"
+          },
+          "outputArtifacts": [
+            { "name": "source-artifact" }
+          ],
+          "inputArtifacts": []
+        }
+      ]
+    },
+    {
+      "name": "Build",
+      "actions": [
+        {
+          "name": "CodeBuild_Build",
+          "actionTypeId": {
+            "category": "Build",
+            "owner": "AWS",
+            "provider": "CodeBuild",
+            "version": "1"
+          },
+          "runOrder": 1,
+          "configuration": {
+            "ProjectName": "build-project"
+          },
+          "inputArtifacts": [
+            { "name": "source-artifact" }
+          ],
+          "outputArtifacts": [
+            { "name": "build-artifact" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deploy",
+      "actions": [
+        {
+          "name": "S3_Deploy",
+          "actionTypeId": {
+            "category": "Deploy",
+            "owner": "AWS",
+            "provider": "S3",
+            "version": "1"
+          },
+          "runOrder": 1,
+            "configuration": {
+            "BucketName": "ewebsite",
+            "Extract": "true",
+            "ObjectKey": "eWebsite.zip"
+          },
+          "inputArtifacts": [
+            { "name": "build-artifact" }
+          ],
+          "outputArtifacts": []
+        }
+      ]
+    }
+  ],
+  "version": 1,
+  "executionMode": "SUPERSEDED",
+  "pipelineType": "V1"
+}

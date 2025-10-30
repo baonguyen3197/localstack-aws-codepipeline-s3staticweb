@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+  .checked {
+    color: orange;
+  }
+  </style>
+</head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-teal" onclick="window.location.href='website.html'"><i class="fa fa-home w3-margin-right"></i></a>
+      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='website.html'">Trang chủ</a>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='about.html'">Về chúng tôi</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button id="products-btn" class="w3-button" title="Notifications">Sản phẩm<i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='healthSupp.html'">Hỗ trợ sức khỏe</a>
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='beautySupp.html'">Hỗ trợ làm đẹp</a>
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='lifeSupp.html'">Hỗ trợ cuộc sống</a>
+        </div>
+      </div>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='contact.html'">Liên hệ</a>
+      <a href="#policy" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='policy.html'">Chính sách</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+      
+      <div class="w3-right w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>  
+      </div>
+      
+      <div>
+        <i class="w3-bar-item fa fa-shopping-cart w3-right" style="font-size:24px"><span class="w3-badge w3-white w3-small">5</span></i>
+        <div class="w3-dropdown-hover w3-right">
+          <button class="w3-button">Admin<i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button" onclick="showNotification()">Đăng xuất</a>
+          </div>
+        </div>
+        <i class="w3-bar-item fa fa-user w3-right w3-xlarge"></i>
+      </div>
+
+      <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#home" class="w3-bar-item w3-button" onclick="window.location.href='website.html'">Trang chủ</a>
+        <a href="#work" class="w3-bar-item w3-button" onclick="window.location.href='about.html'">Về chúng tôi</a>
+        <a href="#products" class="w3-bar-item w3-button" onclick="window.location.href='products.html'">Sản phẩm</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="window.location.href='contact.html'">Liên hệ</a>
+        <a href="#policy" class="w3-bar-item w3-button" onclick="window.location.href='policy.html'">Chính sách</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding w3-center" id="myHeader">
+      <div class="w3-center">
+      <h1>SẢN PHẨM HỖ TRỢ SỨC KHỎE</h>
+      </div>
+    </header>
+    
+    <!-- Body -->
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      <div class="w3-quarter">
+        <img src="./img/DHC3.jpg" alt="Sandwich" style="width:100%">
+      </div>
+      <div>
+        <div class="w3-quarter">
+  
+          <div class="w3-card-4 flip-card" id="myCard2">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="w3-center">
+                  <img src="./img/DHC.png" alt="John" style="width:60%">
+                </div>
+                <div class="w3-container">
+                  <p><span class="w3-tag w3-red w3-left">-11%</span></p>
+                  <h3>Viên Uống DHC Bổ Sung Vitamin C</h3>
+                  <p class="w3-opacity"> Gói 60 Viên 30 Ngày </p>
+                  <div style="display: flex;">
+                    <h4 class="w3-text-gray w3-inline" style="text-decoration: line-through;"> 95.000đ </h4>
+                    <h4 class="w3-text-red w3-inline"> 85.000đ </h4>
+                  </div>
+                  <div class="w3-center">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                  </div>
+                  <div class="w3-row" style="margin-top: 2%;">
+                    <button class="w3-button w3-light-grey w3-center" style="margin-bottom: 2%;" onclick="flipCard('myCard2')">Chi tiết</button>
+                    <button class="w3-button w3-light-grey" style="margin-bottom: 2%;">Thêm vào giỏ</button>
+                  </div>
+                </div>
+              </div>
+              <div class="w3-card-4 flip-card-back" style="display:none">
+                <div class="w3-container">
+                  <div class="w3-container">
+                    <h4>Thành phần sản phẩm</h4>
+                    <p class="w3-text-grey">⦁ Dầu Cá 180mg , EPA 144mg , DHA 96mg , Dầu Hạt Lanh: Giúp duy trì hệ thống tim mạch khỏe mạnh, hỗ trợ giảm nguy cơ mắc bệnh về tim. </p>
+                    <p class="w3-text-grey">⦁ Omega 3-6-9 tốt cho các tế bào, tim và cho quá trình chuyển hóa nhằm tạo năng lượng cho cơ thể. </p>
+                    <p class="w3-text-grey">⦁ EPA và DHA giúp duy trì lượng mỡ trong máu ở mức bình thường và có thể giảm các nguy cơ tim mạch. </p><br>
+                  
+                    <h4>Hướng dẫn sử dụng</h4>
+                    <p class="w3-text-grey">Ngày uống 1 đến 2 lần, mỗi lần 1 viên hoặc theo hướng dẫn trong hộp. </p><br>
+  
+                    <h4>Bảo quản</h4>
+                    <p class="w3-text-grey">⦁	Để xa tầm tay trẻ em. </p>
+                    <p class="w3-text-grey">⦁ Không đặt ở những nơi có ánh sáng trực tiếp chiếu vào, hay những nơi có nhiệt độ quá cao. </p>
+                    <p class="w3-text-grey">⦁	Đậy nắp kín sau khi sử dụng. </p><br>
+                    
+                    <button class="w3-button w3-white w3-xlarge w3-right" onclick="flipCard('myCard2')">&times;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+      <!-- Pagination -->
+    </div>
+    <div class="w3-center w3-padding-32">
+      <div class="w3-bar">
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+        <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+        <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-10 w3-center" style="margin-top: 2%;">
+      <h4>Theo dõi chúng tôi tại</h4>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-youtube"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+          <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+
+        <p>Công ty cổ phần Healthcare &reg;</p>
+    </footer>
+  
+  <script>
+    // Script to open and close sidebar
+    function w3_open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+    }
+    
+    function w3_close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+    }
+
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+
+    // Get the "Products" button element
+    var productsBtn = document.getElementById('products-btn');
+
+    // Add a click event listener to the button
+    productsBtn.addEventListener('click', function() {
+        // Navigate to the products.html page
+        window.location.href = 'products.html';
+    });
+
+    // Logged out notification
+    function showNotification() {
+      alert("Bạn đã đăng xuất thành công!");
+    }
+
+    // Show details
+    function flipCard(cardId) {
+      var card = document.getElementById(cardId);
+      card.classList.toggle("flip-card");
+      var front = card.querySelector(".flip-card-front");
+      var back = card.querySelector(".flip-card-back");
+      if (card.classList.contains("flip-card")) {
+        front.style.display = "none";
+        back.style.display = "block";
+      } else {
+        front.style.display = "block";
+        back.style.display = "none";
+      }
+    }
+
+    // Get the shopping cart icon and badge
+    var cartIcon = document.querySelector(".fa-shopping-cart");
+    var cartBadge = cartIcon.querySelector(".w3-badge");
+
+    // Get all "Thêm vào giỏ" buttons
+    var addToCartButtons = document.querySelectorAll(".w3-button.w3-light-grey.w3-right");
+
+    // Add a click event listener to each button
+    addToCartButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        // Get the current value of the badge
+        var currentValue = parseInt(cartBadge.textContent);
+
+        // Increase the value by 1
+        var newValue = currentValue + 1;
+
+        // Update the badge with the new value
+        cartBadge.textContent = newValue;
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-teal" onclick="window.location.href='website.html'"><i class="fa fa-home w3-margin-right"></i></a>
+      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='website.html'">Trang chủ</a>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='about.html'">Về chúng tôi</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button id="products-btn" class="w3-button" title="Notifications">Sản phẩm<i class="fa fa-caret-down"></i></button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='healthSupp.html'">Hỗ trợ sức khỏe</a>
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='beautySupp.html'">Hỗ trợ làm đẹp</a>
+          <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='lifeSupp.html'">Hỗ trợ cuộc sống</a>
+        </div>
+      </div>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='contact.html'">Liên hệ</a>
+      <a href="#policy" class="w3-bar-item w3-button w3-hide-small w3-hover-white" onclick="window.location.href='policy.html'">Chính sách</a>
+      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>
+      
+      <div class="w3-right w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button w3-hover-teal" title="Search"><i class="fa fa-search"></i></a>  
+      </div>
+      
+      <div>
+        <i class="w3-bar-item fa fa-shopping-cart w3-right" style="font-size:24px"><span class="w3-badge w3-white w3-small">5</span></i>
+        <div class="w3-dropdown-hover w3-right">
+          <button class="w3-button">Admin<i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button" onclick="window.location.href='healthSupp.html'">Đăng xuất</a>
+          </div>
+        </div>
+        <i class="w3-bar-item fa fa-user w3-right w3-xlarge"></i>
+      </div>
+
+      <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+        <a href="#home" class="w3-bar-item w3-button" onclick="window.location.href='website.html'">Trang chủ</a>
+        <a href="#work" class="w3-bar-item w3-button" onclick="window.location.href='about.html'">Về chúng tôi</a>
+        <a href="#products" class="w3-bar-item w3-button" onclick="window.location.href='products.html'">Sản phẩm</a>
+        <a href="#contact" class="w3-bar-item w3-button" onclick="window.location.href='contact.html'">Liên hệ</a>
+        <a href="#policy" class="w3-bar-item w3-button" onclick="window.location.href='policy.html'">Chính sách</a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="w3-container w3-theme w3-padding w3-center" id="myHeader">
+      <div class="w3-center">
+      <h1>LIÊN HỆ CHÚNG TÔI</h>
+      </div>
+    </header>
+    
+    <!-- Body -->
+    <div>
+        <h4 style="text-align: center;">Nếu quý khách hàng có bất kì câu hỏi hoặc thắc mắc, xin vui lòng liên hệ với chúng tôi theo thông tin dưới đây</h4>
+        <div class="w3-row-padding">
+
+            <div class="w3-half">
+            <div class="w3-card white">
+              <div class="w3-container w3-theme-d1">
+                <h3>Thông tin liên hệ</h3>
+              </div>
+              <div class="w3-container">
+              </div>
+              <ul class="w3-ul w3-border-top">
+                <li>
+                  <h3 class="w3-text-teal">Địa chỉ</h3>
+                  <p><i class="fa fa-map-marker w3-text-teal w3-xlarge"></i>  Số 8 Nguyễn Văn Tráng, phường Bến Thành, quận 1, TP. Hồ Chí Minh</p>
+                </li>
+                <li>
+                  <h3 class="w3-text-teal">Hotline</h3>
+                  <p><i class="fa fa-phone w3-text-teal w3-xlarge"></i> 18000 80000</p>
+                </li>
+                <li>
+                  <h3 class="w3-text-teal">Email</h3>
+                  <p><i class="fa fa-envelope-o w3-text-teal w3-xlarge"></i>  Support@healthcare.vn</p>
+                </li>
+              </ul>
+              <div class="w3-container w3-theme-d1 w3-large"><span class="w3-right">.</span></div>
+            </div>
+            </div>
+            
+            <div class="w3-half">
+                <form class="w3-container w3-card-4">
+                  <h3>Hoặc để lại thông tin và thắc mắc cho chúng tôi</h3>
+                  <div class="w3-section">      
+                    <input class="w3-input" type="text" required>
+                    <label>Họ và tên</label>
+                  </div>
+                  <div class="w3-section">      
+                    <input class="w3-input" type="text" required>
+                    <label>Email</label>
+                  </div>
+                  <div class="w3-section">      
+                    <input class="w3-input" type="text" required>
+                    <label>Nội dung</label>
+                  </div>
+                
+                  <div class="w3-half">
+                    <input id="male" class="w3-radio" type="radio" name="gender" value="male" checked>
+                    <label>Nam</label>
+                    <br>
+                    <input id="female" class="w3-radio" type="radio" name="gender" value="female">
+                    <label>Nữ</label>
+                    <br>
+                    <input id="unknown" class="w3-radio" type="radio" name="gender" value="">
+                    <label> Không biết </label>
+                    <!-- <button class="w3-button w3-theme w3-right" id="submit-button">Submit</button> -->
+                    <button type="submit" class="w3-button w3-right w3-theme">Gửi</button>
+                  </div>
+                </form>
+            </div>
+    </div>
+
+    <div class="w3-center" style="margin-top: 5%;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.53565447703!2d106.68994847479242!3d10.770225059308597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f218ed30895%3A0xd7ff822aa9ef6e94!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBIb2EgU2VuIChIU1Up!5e0!3m2!1svi!2s!4v1690999790603!5m2!1svi!2s" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w3-container w3-theme-dark w3-padding-10 w3-center" style="margin-top: 2%;">
+      <h4>Theo dõi chúng tôi tại</h4>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Twitter"><i class="fa fa-twitter"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-youtube"></i></a>
+        <a class="w3-button w3-large w3-teal" href="javascript:void(0)" title="Google +"><i class="fa fa-instagram"></i></a>
+
+        <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+          <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up"></i></span></a>
+        </div>
+
+        <p>Công ty cổ phần Healthcare &reg;</p>
+    </footer>
+
+    <script>
+      // Used to toggle the menu on smaller screens when clicking on the menu button
+      function openNav() {
+          var x = document.getElementById("navDemo");
+          if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          } else { 
+          x.className = x.className.replace(" w3-show", "");
+          }
+      }
+
+      // Get the "Products" button element
+      var productsBtn = document.getElementById('products-btn');
+
+      // Add a click event listener to the button
+      productsBtn.addEventListener('click', function() {
+        // Navigate to the products.html page
+        window.location.href = 'products.html';
+      });
+
+      const submitButton = document.getElementById('submit-button');
+      submitButton.addEventListener('click', () => {
+        alert('Form submitted!');
+      });
+    </script>
+  </body>
+</html>
