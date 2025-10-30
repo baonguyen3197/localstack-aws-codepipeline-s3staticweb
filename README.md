@@ -1,13 +1,13 @@
-# ===========================================
+# ==============
 # Windows
-# ===========================================
+# ==============
 ## Setup Environment
 ```powershell
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements-dev.txt
 ```
-# ===========================================
+# ==============
 # LocalStack
 ## Create source bucket with versioning
 ```powershell
