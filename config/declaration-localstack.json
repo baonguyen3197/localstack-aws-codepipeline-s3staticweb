@@ -19,10 +19,10 @@
           },
           "runOrder": 1,
                     "configuration": {
-            "S3Bucket": "ewebsite",
-            "S3ObjectKey": "eWebsite.zip",
-            "PollForSourceChanges": "false"
-          },
+                    "S3Bucket": "ewebsite",
+                    "S3ObjectKey": "eWebsite/index.html",
+                    "PollForSourceChanges": "true"
+                  },
           "outputArtifacts": [
             { "name": "source-artifact" }
           ],
@@ -68,8 +68,8 @@
           "runOrder": 1,
             "configuration": {
             "BucketName": "ewebsite",
-            "Extract": "true",
-            "ObjectKey": "eWebsite.zip"
+            "Extract": "false",
+            "ObjectKey": "index.html"
           },
           "inputArtifacts": [
             { "name": "build-artifact" }

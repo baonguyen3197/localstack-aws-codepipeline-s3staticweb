@@ -1,0 +1,21 @@
+{
+    "environment":  {
+                        "environmentVariables":  [
+
+                                                 ],
+                        "computeType":  "BUILD_GENERAL1_SMALL",
+                        "type":  "LINUX_CONTAINER",
+                        "image":  "aws/codebuild/standard:5.0"
+                    },
+    "name":  "build-project",
+    "source":  {
+                   "type":  "S3",
+                   "location":  "artifact-store-bucket/pipeline/source-artifact/PLACEHOLDER.zip"
+               },
+    "serviceRole":  "arn:aws:iam::000000000000:role/codebuild-service-role",
+    "description":  "LocalStack minimal CodeBuild project for pipeline",
+    "artifacts":  {
+                      "type":  "S3",
+                      "location":  "artifact-store-bucket"
+                  }
+}

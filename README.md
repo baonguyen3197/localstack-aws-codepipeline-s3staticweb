@@ -9,16 +9,16 @@ pip install -r requirements-dev.txt
 ```
 # ==============
 # LocalStack
-## Create source bucket with versioning
-```powershell
-awslocal s3api put-bucket-versioning `
-    --bucket source-bucket `
-    --versioning-configuration Status=Enabled
-```
-
 ## Create bucket
 ```powershell
 awslocal s3 mb s3://ewebsite
+```
+
+## Create source bucket with versioning
+```powershell
+awslocal s3api put-bucket-versioning `
+    --bucket ewebsite `
+    --versioning-configuration Status=Enabled
 ```
 
 ## Create artifact store bucket
@@ -34,6 +34,10 @@ awslocal s3api put-bucket-policy --bucket ewebsite --policy file://config/bucket
 ## Create IAM Role and get its ARN
 ```bash
 awslocal iam create-role --role-name role --assume-role-policy-document file://config/iam-role.json | jq .Role.Arn
+
+awslocal iam create-role --role-name codebuild-service-role --assume-role-policy-document file://LocalStack/config/codebuild-assume-role.json
+
+awslocal iam put-role-policy --role-name codebuild-service-role --policy-name LocalCodeBuildDevPolicy --policy-document file://config/codebuild-role-policy.json
 ```
 
 ```powershell
@@ -51,27 +55,32 @@ awslocal codepipeline update-pipeline --pipeline file://config/declaration-local
 awslocal codepipeline list-pipeline-executions --pipeline-name pipeline
 ```
 
-## # package site and upload source zip (simulate commit)
+## Package site and upload source zip (simulate commit)
 ```powershell
 Compress-Archive -Path .\eWebsite\ -DestinationPath .\eWebsite.zip -Force
 awslocal s3 cp .\eWebsite.zip s3://ewebsite/eWebsite.zip
 ```
 # start pipeline
 ```powershell
-$exec = awslocal codepipeline start-pipeline-execution --name pipeline | ConvertFrom-Json
-$exec.pipelineExecutionId
+awslocal codepipeline start-pipeline-execution --name pipeline
 ```
 
-# wait & inspect
+## wait & inspect
 ```powershell
 awslocal codepipeline list-pipeline-executions --pipeline-name pipeline
-awslocal codepipeline get-pipeline-execution --pipeline-name pipeline --pipeline-execution-id $exec.pipelineExecutionId | ConvertFrom-Json | ConvertTo-Json -Depth 20
+awslocal codepipeline get-pipeline-execution --pipeline-name pipeline --pipeline-execution-id <execution-id>
 ```
 
-## Deploy website after pipeline Succeeded
+## Debugging: Get CodeBuild logs
 ```powershell
-awslocal s3api put-bucket-website --bucket ewebsite --website-configuration file://config/website-config.json
-awslocal s3api put-bucket-policy --bucket ewebsite --policy file://config/ewebsite-policy.json
+awslocal codepipeline list-action-executions --pipeline-name pipeline --max-items 50
+```
+
+## Synchronize website files to verify
+```powershell
+awslocal s3 sync .\eWebsite\ s3://ewebsite
+awslocal s3 website s3://ewebsite/ --index-document index.html 
+awslocal s3 ls s3://ewebsite/
 ```
 
 ## Verify
